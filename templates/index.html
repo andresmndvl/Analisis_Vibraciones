@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Análisis de Vibraciones</h1>
+
+<div class="dropdown mb-4">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+    Seleccionar estado
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item estado" data-estado="Reposo">Reposo</a></li>
+    <li><a class="dropdown-item estado" data-estado="Normal">Normal</a></li>
+    <li><a class="dropdown-item estado" data-estado="Falla">Falla</a></li>
+  </ul>
+</div>
+
+<h3>Acelerómetro</h3>
+<canvas id="chartAcelerometro"></canvas>
+
+<h3 class="mt-4">Giroscopio</h3>
+<canvas id="chartGiroscopio"></canvas>
+
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}
